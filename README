@@ -1,0 +1,89 @@
+DEMO
+
+http://www.hitaware.com/urlcrawler
+
+HOW TO BUILD
+
+- clone the repository
+- run "mvn clean install"
+
+HOW TO RUN
+
+- deploy urlcrawler.war to tomcat
+- http://localhost:8080/urlcrawler
+
+TECHNOLOGIES USED
+
+- Java 1.7
+- Spring MVC with JSP(with JSTL) view technology
+- Java Concurrency package
+- JQuery 1.8.2
+- XMLHTTPRequest (AJAX)
+- Maven 3.1 Build Tool
+- Apache Tomcat Web Server 8
+- JUnit 4 testing framework
+
+
+FUNCTIONALITY
+
+- Submit Search Page
+
+		On this page, you submit searches. Just enter url and link depth and press submit. Then,
+		go to search results page in order to follow up the your search. You can submit multiple 
+		searches on after another without having to wait for the previous submits to fihish.
+		
+		When you submit a search a new Job object created and it is run by Job Runner which uses 
+		ExecutorService thread. Your search runs in a separate thread.
+
+- Search Results Page
+
+		You can follow the search results (completed/running) from
+		"Search Results" page. This page shows the searches you've made in the
+		current session.
+		
+		Jobs are aggregated in a History object whose instance is stored in HttpSession. This page
+		shows exactly what is currently in  the session.
+
+- Statistics Page
+
+		You can see detailed information about searches like unique domain count and pages in the domains.
+		
+		Every Job has an id, by clicking the job link in search results page you reach statistics page
+		for that particular job. The id is used as a reference to the job.
+
+- Previous Searches Page
+
+		You can see your previous searches from "Previous Searches"
+		page. This page shows the searches you've made in the current session
+		and also in your previous sessions. They are based on cookies. Cookies are managed by a utility
+		class called CookieUtil. Only search url and link depth information are stored in a cookie.
+
+
+- Multi-Tasking
+
+		ExecutorService is used for thread pool. By default its size is 10.  Threads will wait until there 
+		is free thread in thread pool. There is no syncronization problem in the application. Because
+		threads are started by sessions and they modify only session related data. So different users'
+		data is safe.
+
+
+  * Please find detailed information in Javadoc comments.
+
+TODO
+
+		- Add page list in domains in statistics page.
+		- Add histogram chart in statistics page.
+		- Use Set data structure  instead of List for innerProcessingQueue for efficiency.
+		- Maven code quality check will be fine tuned
+		- Fine tune html parsing procedures.
+		
+FUTURE IMPROVEMENTS
+
+		- Currently searches run in seperate threads. But individual threads tasks  should also be run in 
+		parallel. So each search will have more than one  thread.
+		- Previous searches are stored in cookies, we might store it in DB. But for this we must
+		also implement a login functionality for users.
+		- MOre sophisticated Html parsing library  will be used.
+
+		
+		

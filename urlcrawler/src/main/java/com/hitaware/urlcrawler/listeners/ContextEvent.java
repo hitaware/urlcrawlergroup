@@ -1,6 +1,5 @@
 package com.hitaware.urlcrawler.listeners;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,6 +12,7 @@ import javax.servlet.annotation.WebListener;
 import org.slf4j.LoggerFactory;
 
 import com.hitaware.urlcrawlercommons.util.URLUtil;
+
 
 /**
  * Class <code>ContextEvent</code> listens to context events. When the web
@@ -43,16 +43,15 @@ public class ContextEvent implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		try {
-			InputStream is = ContextEvent.class
-					.getResourceAsStream("/tlds");
-			Pattern p = URLUtil.getPattern(is);
+			Pattern p = URLUtil.getPattern();
 			event.getServletContext().setAttribute("pattern", p);
 
 			executor = Executors.newFixedThreadPool(10);
 
 			event.getServletContext().setAttribute("executor", executor);
 			LOGGER.info("Context started");
-		} catch (IOException e) {
+		} catch (Exception e) {
+			e.printStackTrace();
 			LOGGER.error("Error occured > ", e);
 		}
 

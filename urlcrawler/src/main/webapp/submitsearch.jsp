@@ -59,6 +59,7 @@ of a fixed sized thread pool.</li>
 
 </ul>
 
+<p>
 <a href="javascript:history.back()">Go Back</a>
 
 <jsp:include page="bottom.jsp" />

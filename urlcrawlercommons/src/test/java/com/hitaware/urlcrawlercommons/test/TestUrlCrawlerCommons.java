@@ -1,7 +1,6 @@
 package com.hitaware.urlcrawlercommons.test;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 import org.junit.Assert;
@@ -11,6 +10,7 @@ import com.hitaware.urlcrawlercommons.util.URLUtil;
 
 public class TestUrlCrawlerCommons {
 	
+	@Test
 	
 	public void testExtract2LD() throws IOException {
 		

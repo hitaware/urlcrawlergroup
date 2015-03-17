@@ -1,6 +1,6 @@
 DEMO
 
-http://www.hitaware.com/urlcrawler
+http://www.hitaware.com:7080/urlcrawler/
 
 HOW TO BUILD
 
@@ -72,10 +72,10 @@ FUNCTIONALITY
 TODO
 
 		- Add page list in domains in statistics page.
-		- Add histogram chart in statistics page.
 		- Use Set data structure  instead of List for innerProcessingQueue for efficiency.
 		- Maven code quality check will be fine tuned
 		- Fine tune html parsing procedures.
+		- Select top x domains to show in the chart (when the data is too big which data to show?)
 		
 FUTURE IMPROVEMENTS
 
@@ -83,7 +83,9 @@ FUTURE IMPROVEMENTS
 		parallel. So each search will have more than one  thread.
 		- Previous searches are stored in cookies, we might store it in DB. But for this we must
 		also implement a login functionality for users.
-		- MOre sophisticated Html parsing library  will be used.
+		- More sophisticated Html parsing library  will be used.
+		- Memory management for huge searches
+		
 
 		
 		

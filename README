@@ -67,7 +67,7 @@ FUNCTIONALITY
 
 		ExecutorService is used for thread pool. By default its size is 10.  Threads will wait until there 
 		is free thread in thread pool. There is no syncronization problem in the application. Because
-		threads are started by sessions and they modify only session related data. So different users'
+		threads are started by sessions and they modify only session related data. So, different users'
 		data is safe.
 
 
@@ -83,12 +83,14 @@ TODO
 		
 FUTURE IMPROVEMENTS
 
-		- Currently searches run in seperate threads. But individual threads tasks  should also be run in 
-		parallel. So each search will have more than one  thread.
+		- Currently searches run in seperate threads. But individual threads tasks  will be split into
+		parallel threads. So, each search will have more than one thread, which means multithreaded search
+		tasks.
+		- Distributed searching for big search tasks.
 		- Previous searches are stored in cookies, we might store it in DB. But for this we must
-		also implement a login functionality for users.
-		- More sophisticated Html parsing library  will be used.
-		- Memory management for huge searches
+		 implement a login functionality for users.
+		- More sophisticated HTML parsing library will be used.
+	
 		
 
 		

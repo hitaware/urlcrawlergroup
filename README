@@ -75,11 +75,11 @@ FUNCTIONALITY
 
 TODO
 
-		- Add page list in domains in statistics page.
-		- Use Set data structure  instead of List for innerProcessingQueue for efficiency.
-		- Maven code quality check will be fine tuned
-		- Fine tune html parsing procedures.
+		- Use Set data structure  instead of List data structure for innerProcessingQueue for efficiency.
+		- Fine tune HTML  parsing callbacks.
 		- Select top x domains to show in the chart (when the data is too big which data to show?)
+		- Maven code quality check will be fine tuned.
+
 		
 FUTURE IMPROVEMENTS
 
